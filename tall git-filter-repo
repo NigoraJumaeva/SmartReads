@@ -1,0 +1,19 @@
+[33mcommit e20b7db8442895573395a9c7dacaadf0c3702002[m
+Author: Nigora Jumaeva <njumaeva@myseneca.ca>
+Date:   Mon Aug 3 23:24:34 2026 -0400
+
+    Remove environment files and update gitignore
+
+[33mcommit 84d61f9e3ba88959b55ecc51a70c6f847c58d5de[m
+Author: Nigora Jumaeva <nigorajumaevatashkent@gmail.com>
+Date:   Mon Aug 3 23:01:50 2026 -0400
+
+    Remove sensitive data from user-api/.env
+    
+    Removed sensitive information from .env file.
+
+[33mcommit 2e37b5bda8773d8925b456f71a94b4b48b67b962[m
+Author: Nigora Jumaeva <njumaeva@myseneca.ca>
+Date:   Mon Aug 3 22:32:48 2026 -0400
+
+    WEB422 Assignment 3
