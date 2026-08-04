@@ -86,9 +86,9 @@ userService.initialize()
 })
 .catch((err)=>{
 
-    console.log(
+    console.error(
         "MongoDB connection error:",
-        err
+        err.message
     );
 
 });
