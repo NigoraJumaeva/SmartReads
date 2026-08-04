@@ -2,7 +2,7 @@ import { getToken } from "./authenticate";
 
 const API_URL =
     process.env.NEXT_PUBLIC_API_URL ||
-    "http://localhost:8081";
+    "http://localhost:8081/api/user";
 
 // Get all favourites
 export async function getFavourites() {
@@ -28,7 +28,7 @@ export async function getFavourites() {
 // Add a favourite
 export async function addToFavourites(id) {
 
-    const res = await fetch(`${API_URL}/api/user/favourites`, {
+    const res = await fetch(`${API_URL}/favourites/${id}`, {
 
         method: "PUT",
 

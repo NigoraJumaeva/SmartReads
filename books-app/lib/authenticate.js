@@ -2,7 +2,9 @@ import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
 const API_URL =
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:8081";
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:8081/api/user";
+
 // Save JWT in a cookie
 export function setToken(token) {
     Cookies.set("access_token", token);
@@ -45,7 +47,7 @@ export function isAuthenticated() {
 // Login
 export async function authenticateUser(userName, password) {
 
-    const res = await fetch(`${API_URL}/api/user/login`, {
+    const res = await fetch(`${API_URL}/login`, {
 
         method: "POST",
 
