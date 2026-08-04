@@ -8,6 +8,9 @@ import {
     removeFromFavourites
 } from '@/lib/userData';
 
+import { isAuthenticated } from "@/lib/authenticate";
+
+
 export default function BookDetails({
     book,
     workId,
@@ -17,40 +20,82 @@ export default function BookDetails({
     const [showAdded, setShowAdded] = useState(false);
 
 
-useEffect(() => {
+    useEffect(() => {
 
-    async function loadFavourites(){
+        async function loadFavourites() {
 
-        const favourites = await getFavourites();
+            if (!isAuthenticated()) {
+                return;
+            }
 
-        setShowAdded(
-            favourites.includes(workId)
-        );
+            try {
+
+                const favourites = await getFavourites();
+
+                setShowAdded(
+                    favourites.includes(workId)
+                );
+
+            } catch (err) {
+
+                console.log(
+                    "Unable to load favourites",
+                    err
+                );
+
+            }
+
+        }
+
+
+        loadFavourites();
+
+
+    }, [workId]);
+
+
+
+    async function favouritesClicked() {
+
+
+        if (!isAuthenticated()) {
+
+            alert("Please login to add favourites.");
+
+            return;
+
+        }
+
+
+        try {
+
+
+            if (showAdded) {
+
+
+                await removeFromFavourites(workId);
+
+                setShowAdded(false);
+
+
+            } else {
+
+
+                await addToFavourites(workId);
+
+                setShowAdded(true);
+
+
+            }
+
+
+        } catch(err) {
+
+            console.log(err);
+
+        }
 
     }
-
-
-    loadFavourites();
-
-}, [workId]);
-
-async function favouritesClicked(){
-
-    if(showAdded){
-
-        await removeFromFavourites(workId);
-
-        setShowAdded(false);
-
-    }else{
-
-        await addToFavourites(workId);
-
-        setShowAdded(true);
-
-    }
-
-}
 
 
     return (
