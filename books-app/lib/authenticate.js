@@ -1,8 +1,9 @@
 import Cookies from "js-cookie";
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
+const API_URL =
+    process.env.NEXT_PUBLIC_API_URL ||
+    "http://localhost:8081/api/user";
 // Save JWT in a cookie
 export function setToken(token) {
     Cookies.set("access_token", token);
