@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 * WEB422 – Assignment 3
 *
 * I declare that this assignment is my own work in accordance with Seneca's
@@ -6,9 +6,12 @@
 *
 * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 *
-* Name: Nigora Jumaeva Student ID: 101498244 Date: August 1, 2026
+* Name: Nigora Jumaeva Student ID: 101498244 Date: August 7, 2026
 *
-********************************************************************************/import PageHeader from "@/components/PageHeader";
+* Vercel App (Deployed) Link: https://smart-reads-saam.vercel.app/
+*
+********************************************************************************/
+import PageHeader from "@/components/PageHeader";
 
 import { Form, Button, Row, Col } from "react-bootstrap";
 
